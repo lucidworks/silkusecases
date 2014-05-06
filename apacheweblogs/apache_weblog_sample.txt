@@ -1,0 +1,11 @@
+66.249.73.9 - - [09/Mar/2014:06:26:20 -0700] "GET /document/622d412eedc06291 HTTP/1.1" 200 3499 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.73.9 - - [09/Mar/2014:06:26:38 -0700] "GET /document/c0a97483a25ca3d8 HTTP/1.1" 200 3311 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.73.9 - - [09/Mar/2014:06:26:41 -0700] "GET /page:16774?q=apache HTTP/1.1" 200 6728 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+50.17.233.225 - - [09/Mar/2014:06:26:50 -0700] "GET / HTTP/1.1" 200 24442 "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7"
+50.17.233.225 - - [09/Mar/2014:06:26:51 -0700] "GET /?q=solr HTTP/1.1" 200 40935 "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7"
+66.249.73.9 - - [09/Mar/2014:06:26:57 -0700] "GET /document/8247fd1803e023a8 HTTP/1.1" 200 3486 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.73.9 - - [09/Mar/2014:06:26:59 -0700] "GET /page:16788?q=apache HTTP/1.1" 200 6282 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.73.9 - - [09/Mar/2014:06:27:30 -0700] "GET /document/e0eb60f8ebd1a8d6 HTTP/1.1" 200 3283 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.73.9 - - [09/Mar/2014:06:27:32 -0700] "GET /document/9078ed75d38f4126 HTTP/1.1" 200 4164 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+50.17.233.225 - - [09/Mar/2014:06:27:50 -0700] "GET / HTTP/1.1" 200 24442 "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.7) Gecko/20060909 Firefox/1.5.0.7"
+

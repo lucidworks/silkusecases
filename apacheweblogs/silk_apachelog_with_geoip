@@ -1,0 +1,80 @@
+input {
+  file { 
+    path => "/Users/ravikrishnamurthy/Documents/src/demo_log_generator/mysamplelogs/lucidfind/weblogs/find_searchhub_org_access*" 
+    exclude => ["*.gz","*.zip","*.tgz"]
+    type => "apache-access"
+    sincedb_path => "/Users/ravikrishnamurthy/Documents/agents/SiLK-1.1/solrWriterForLogStash/logstash_deploy/apachelogs.sincedb"
+    start_position => "beginning"
+  }
+}
+
+
+filter {
+  grok {
+    
+    type => "apache-access"
+    patterns_dir => "./patterns"
+    # See the following URL for a complete list of named patterns
+    # logstash/grok ships with by default:
+    # https://github.com/logstash/logstash/tree/master/patterns
+    #
+    # The grok filter will use the below pattern and on successful match use
+    # any captured values as new fields in the event.
+    
+    pattern => "%{COMBINEDAPACHELOG}"
+  }
+
+  date {
+    type => "apache-access"
+    # Try to pull the timestamp from the 'timestamp' field (parsed above with
+    # grok). The apache time format looks like: "18/Aug/2011:05:44:34 -0700"
+    match => [ "timestamp", "dd/MMM/yyyy:HH:mm:ss Z" ]
+  }
+  
+  geoip{
+  	source => ["clientip"]
+  }
+  
+  mutate{
+  #timestamp is a field used in LWS. Need to delete it here
+  	remove_field => [ "timestamp"]
+  
+  #flatten the geoip JSON object into Solr fields
+  	# two letter country code used by map module
+  	rename =>["[geoip][country_code2]", "country"]
+  	#three letter country code, not used at the moment
+  	rename =>["[geoip][country_code3]", "country3"]
+  	rename =>["[geoip][city_name]", "city"]
+  	rename =>["[geoip][continent_code]", "continent"]
+  	
+  	# location field for use in clustering and range faceting by LatLon coordinates
+  	add_field => {"geolocation" => "%{[geoip][latitude]},%{[geoip][longitude]}"}
+  	
+  }
+  
+  #in map module we want to get two letter state codes for US geography only. Use region codes elsewhere
+  if [country] == "US" {
+  	mutate{	
+  		rename =>["[geoip][region_name]", "state"]
+  	}
+  }
+  else{
+  	mutate{	
+  		rename =>["[geoip][region_name]", "region"]
+  	}
+  }
+  
+  #now that we have flattened it there is no need for the geoip field.
+  mutate{
+  	remove_field => ["geoip"]
+  }
+  
+}
+
+
+output {
+  stdout { debug => true codec => "rubydebug"}
+  lucidworks_solr_lsv133 { collection_host => "localhost" collection_port => "8888" collection_name => "lucidfindapachelogs" field_prefix => "event_" force_commit => false flush_size => 100 idle_flush_time => 1 }
+  
+}
+
