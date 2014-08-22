@@ -1,9 +1,9 @@
 input {
   file { 
-    path => "/Users/ravikrishnamurthy/Documents/src/demo_log_generator/mysamplelogs/lucidfind/weblogs/find_searchhub_org_access*" 
+    path => "/Users/ravikrishnamurthy/Documents/src/silkusecases/apacheweblogs/apache_weblog_sample.txt" 
     exclude => ["*.gz","*.zip","*.tgz"]
     type => "apache-access"
-    sincedb_path => "/Users/ravikrishnamurthy/Documents/agents/SiLK-1.1/solrWriterForLogStash/logstash_deploy/apachelogs.sincedb"
+    sincedb_path => "apachelogs.sincedb"
     start_position => "beginning"
   }
 }
@@ -23,6 +23,11 @@ filter {
     
     pattern => "%{COMBINEDAPACHELOG}"
   }
+  
+  if ("_grokparsefailure" in [tags]) {
+                drop{}
+  }
+
 
   date {
     type => "apache-access"
@@ -74,7 +79,7 @@ filter {
 
 output {
   stdout { debug => true codec => "rubydebug"}
-  lucidworks_solr_lsv133 { collection_host => "localhost" collection_port => "8888" collection_name => "lucidfindapachelogs" field_prefix => "event_" force_commit => false flush_size => 100 idle_flush_time => 1 }
+  lucidworks_solr_lsv133 { collection_host => "localhost" collection_port => "8889" collection_name => "apachelogs" field_prefix => "event_" force_commit => false flush_size => 100 idle_flush_time => 1 }
   
 }
 
