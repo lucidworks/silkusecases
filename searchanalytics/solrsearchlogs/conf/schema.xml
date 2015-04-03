@@ -1076,5 +1076,5 @@
        <str name="paramkey">param value</str>
      </similarity>
     -->
-
+ <copyField dest="userquery" source="queryterms"/>
 </schema>
