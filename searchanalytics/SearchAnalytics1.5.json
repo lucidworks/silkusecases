@@ -24,23 +24,23 @@
     },
     "filter": {
       "idQueue": [
-        0,
+        1,
         2
       ],
       "list": {
-        "1": {
-          "type": "time",
+        "0": {
           "from": "2014-03-01T01:09:32.000Z",
-          "to": "2014-05-31T08:27:36.473Z",
+          "to": "2014-05-31T08:27:36.000Z",
           "field": "event_timestamp",
+          "type": "time",
           "mandate": "must",
           "active": true,
           "alias": "",
-          "id": 1
+          "id": 0
         }
       },
       "ids": [
-        1
+        0
       ]
     }
   },
@@ -116,7 +116,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]&wt=json&rows=0\n",
+            "query": "q=*%3A*&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]&wt=json&rows=0\n",
             "basic_query": "",
             "custom": ""
           },
@@ -173,7 +173,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]&facet=true&facet.range=event_timestamp&facet.range.start=2014-03-01T01:09:32.000Z&facet.range.end=2014-05-31T08:27:36.473Z&facet.range.gap=%2B12HOUR\n",
+            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]&facet=true&facet.range=event_timestamp&facet.range.start=2014-03-01T01:09:32.000Z&facet.range.end=2014-05-31T08:27:36.000Z&facet.range.gap=%2B12HOUR\n",
             "custom": ""
           },
           "max_rows": 100000,
@@ -230,11 +230,11 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]&facet=true&facet.field=queryterms&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]&facet=true&facet.field=userquery&facet.limit=10&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
-          "field": "queryterms",
+          "field": "userquery",
           "stats_field": "",
           "decimal_points": 0,
           "exclude": [],
@@ -313,7 +313,7 @@
             "#F9D9F9",
             "#DEDAF7"
           ],
-          "title": "Search Terms"
+          "title": "Searches"
         },
         {
           "span": 3,
@@ -325,11 +325,11 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]&facet=true&facet.field=queryterms&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]&facet=true&facet.field=userquery&facet.limit=10&facet.missing=true",
             "custom": "&fq=hits:0"
           },
           "mode": "count",
-          "field": "queryterms",
+          "field": "userquery",
           "stats_field": "",
           "decimal_points": 0,
           "exclude": [],
@@ -420,7 +420,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]&facet=true&facet.field=searchhandler&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]&facet=true&facet.field=searchhandler&facet.limit=10&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
@@ -525,7 +525,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]&facet=true&facet.range=event_timestamp&facet.range.start=2014-03-01T01:09:32.000Z&facet.range.end=2014-05-31T08:27:36.473Z&facet.range.gap=%2B12HOUR\n",
+            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]&facet=true&facet.range=event_timestamp&facet.range.start=2014-03-01T01:09:32.000Z&facet.range.end=2014-05-31T08:27:36.000Z&facet.range.gap=%2B12HOUR\n",
             "custom": "&fq=qtime:[300 TO *]"
           },
           "max_rows": 100000,
@@ -582,11 +582,11 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]&facet=true&facet.field=queryterms&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A*&wt=json&rows=0&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]&facet=true&facet.field=userquery&facet.limit=10&facet.missing=true",
             "custom": "&fq=qtime:[300 TO *]"
           },
           "mode": "count",
-          "field": "queryterms",
+          "field": "userquery",
           "stats_field": "",
           "decimal_points": 0,
           "exclude": [],
@@ -687,8 +687,8 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]&wt=json&rows=500",
-            "basic_query": "q=*%3A*&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.473Z]",
+            "query": "q=*%3A*&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]&wt=json&rows=500",
+            "basic_query": "q=*%3A*&fq=event_timestamp:[2014-03-01T01:09:32.000Z%20TO%202014-05-31T08:27:36.000Z]",
             "custom": ""
           },
           "size": 100,
@@ -703,10 +703,10 @@
           "fields": [
             "queryterms",
             "searchhandler",
-            "webapp",
             "qtime",
             "hits",
-            "status"
+            "status",
+            "webapp"
           ],
           "highlight": [],
           "sortable": false,
